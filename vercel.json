@@ -7,8 +7,8 @@
   "devCommand": "pnpm run dev",
 
   "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "nodejs@18"
+    "api/**/*.ts": {
+      "runtime": "vercel-node@1.15.4"
     }
   },
   "rewrites": [
