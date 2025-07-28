@@ -1,6 +1,5 @@
 import { ChatOpenAI } from '@langchain/openai';
 import { HumanMessage, AIMessage } from '@langchain/core/messages';
-import { StringOutputParser } from '@langchain/core/output_parsers';
 import { getDefaultModel, type ModelConfig } from '../config/models';
 
 export interface ChatMessage {
@@ -12,12 +11,14 @@ export interface ChatMessage {
 
 export class AIService {
   private model: ChatOpenAI;
-  private outputParser: StringOutputParser;
   private currentModel: ModelConfig;
 
   constructor(modelConfig?: ModelConfig) {
     this.currentModel = modelConfig || getDefaultModel();
-    this.outputParser = new StringOutputParser();
+    this.model = new ChatOpenAI({
+      modelName: this.currentModel.id,
+      temperature: 0.7
+    });
     this.initializeModel();
   }
 

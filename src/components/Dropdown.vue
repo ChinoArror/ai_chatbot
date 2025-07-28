@@ -121,7 +121,7 @@ interface Emits {
   (e: 'update:selectedModel', model: ModelConfig): void
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   selectedModel: null,
   isDark: false
 })

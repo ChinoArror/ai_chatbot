@@ -169,7 +169,6 @@ const sendMessage = async () => {
   }
   
   messages.value.push(userMessage)
-  const userInput = inputMessage.value.trim()
   inputMessage.value = ''
   isLoading.value = true
   errorMessage.value = ''
