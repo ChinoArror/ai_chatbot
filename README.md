@@ -1,4 +1,4 @@
-# AI 聊天助手
+# AI 聊天助手AIzaSyBQ2Wj7OHUOIy0ZqaWRoXRZyOizXxP4YOI
 
 一个基于 Vue 3 + TypeScript + Tailwind CSS 的现代化 AI 聊天应用，支持多个 AI 模型提供商。
 
