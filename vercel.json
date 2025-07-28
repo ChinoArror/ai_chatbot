@@ -6,7 +6,11 @@
   "installCommand": "pnpm install",
   "devCommand": "pnpm run dev",
 
-  
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "vercel-node@1.15.4"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
