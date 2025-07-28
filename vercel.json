@@ -5,7 +5,9 @@
   "framework": "vite",
   "installCommand": "pnpm install",
   "devCommand": "pnpm run dev",
-  "nodeVersion": "18.x",
+  "engines": {
+    "node": "18.x"
+  },
 
   "functions": {
     "api/**/*.ts": {
