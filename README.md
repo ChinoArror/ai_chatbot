@@ -79,53 +79,36 @@ VITE_DEFAULT_MODEL=gpt-3.5-turbo  # 默认使用的模型
 
 ## Vercel 部署
 
-### 方法一：通过 Vercel CLI
+### 部署步骤
 
-1. **安装 Vercel CLI**
-   ```bash
-   npm i -g vercel
-   ```
+1.  **Fork 本仓库**
 
-2. **登录 Vercel**
-   ```bash
-   vercel login
-   ```
+2.  **在 Vercel 中新建项目**
 
-3. **部署项目**
-   ```bash
-   vercel
-   ```
+    登录 [Vercel](https://vercel.com)，选择“Add New...” -> “Project”，然后导入你 Fork 的仓库。
 
-### 方法二：通过 Vercel Dashboard
+3.  **配置环境变量**
 
-1. 访问 [Vercel Dashboard](https://vercel.com/dashboard)
-2. 点击 "New Project"
-3. 导入您的 Git 仓库
-4. Vercel 会自动检测到这是一个 Vite 项目
+    在项目设置的“Environment Variables”中，添加以下变量。请注意，`vercel.json` 文件中的 `@` 符号引用了这些密钥，因此你需要将它们添加为 **Secrets**。
 
-### 环境变量配置
+    | 密钥名称 (`Name`)          | 推荐值 (`Value`)                           |
+    | -------------------------- | ------------------------------------------ |
+    | `openai_use`               | `true`                                     |
+    | `openai_token`             | `sk-xxxxxxxxxxxxxxxxxxxxxxxx`              |
+    | `openai_base_url`          | `https://api.openai.com/v1`                |
+    | `deepseek_use`             | `true`                                     |
+    | `deepseek_token`           | `sk-xxxxxxxxxxxxxxxxxxxxxxxx`              |
+    | `deepseek_base_url`        | `https://api.deepseek.com/v1`              |
+    | `zhipu_use`                | `true`                                     |
+    | `zhipu_token`              | `xxxxxxxxxxxxxxxxxxxxxxxx`                 |
+    | `zhipu_base_url`           | `https://open.bigmodel.cn/api/paas/v4`     |
+    | `default_model`            | `gpt-3.5-turbo`                            |
 
-在 Vercel Dashboard 中配置以下环境变量：
+    **重要提示**: Vercel 会自动为所有环境变量添加 `VITE_` 前缀，因此在 Vercel UI 中输入密钥名称时，请**不要**包含 `VITE_`。
 
-| 变量名 | 描述 | 示例值 |
-|--------|------|--------|
-| `VITE_OPENAI_USE` | 是否启用 OpenAI | `true` |
-| `VITE_OPENAI_TOKEN` | OpenAI API 密钥 | `sk-xxx` |
-| `VITE_OPENAI_BASE_URL` | OpenAI API 基础URL | `https://api.openai.com/v1` |
-| `VITE_DEEPSEEK_USE` | 是否启用 DeepSeek | `true` |
-| `VITE_DEEPSEEK_TOKEN` | DeepSeek API 密钥 | `sk-xxx` |
-| `VITE_DEEPSEEK_BASE_URL` | DeepSeek API 基础URL | `https://api.deepseek.com/v1` |
-| `VITE_ZHIPU_USE` | 是否启用智谱AI | `true` |
-| `VITE_ZHIPU_TOKEN` | 智谱AI API 密钥 | `xxx` |
-| `VITE_ZHIPU_BASE_URL` | 智谱AI API 基础URL | `https://open.bigmodel.cn/api/paas/v4` |
-| `VITE_DEFAULT_MODEL` | 默认模型 | `gpt-3.5-turbo` |
+4.  **部署**
 
-### 部署配置
-
-项目包含 `vercel.json` 配置文件，确保：
-- 使用 `pnpm` 作为包管理器
-- 正确的构建和输出目录配置
-- SPA 路由重写规则
+    配置完成后，Vercel 将自动开始部署。部署成功后，你就可以访问你的专属 AI 聊天应用了。
 
 ## 技术栈
 

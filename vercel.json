@@ -4,18 +4,7 @@
   "framework": "vite",
   "installCommand": "pnpm install",
   "devCommand": "pnpm run dev",
-  "env": {
-    "VITE_OPENAI_USE": "@openai_use",
-    "VITE_OPENAI_TOKEN": "@openai_token",
-    "VITE_OPENAI_BASE_URL": "@openai_base_url",
-    "VITE_DEEPSEEK_USE": "@deepseek_use",
-    "VITE_DEEPSEEK_TOKEN": "@deepseek_token",
-    "VITE_DEEPSEEK_BASE_URL": "@deepseek_base_url",
-    "VITE_ZHIPU_USE": "@zhipu_use",
-    "VITE_ZHIPU_TOKEN": "@zhipu_token",
-    "VITE_ZHIPU_BASE_URL": "@zhipu_base_url",
-    "VITE_DEFAULT_MODEL": "@default_model"
-  },
+
   "functions": {
     "app/api/**/*.ts": {
       "runtime": "nodejs18.x"
